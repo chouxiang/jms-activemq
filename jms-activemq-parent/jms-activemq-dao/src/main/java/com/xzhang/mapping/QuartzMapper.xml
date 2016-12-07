@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xzhang.mapper.IQuartzMapper">
+    <!-- 基本返回值：实体类对象 -->
+    <resultMap id="BaseResultMap" type="com.xzhang.model.InstmtQuartz">
+        <id column="id" property="id" jdbcType="VARCHAR" />
+        <result column="trigger_group" property="triggergroup" jdbcType="VARCHAR" />
+        <result column="job_name" property="jobname" jdbcType="VARCHAR" />
+        <result column="trigger_name" property="triggername" jdbcType="VARCHAR" />
+        <result column="class_name" property="classname" jdbcType="VARCHAR" />
+        <result column="enable_status" property="enablestatus" jdbcType="VARCHAR" />
+        <result column="trigger_cron" property="triggercron" jdbcType="VARCHAR" />
+        <result column="trigger_status" property="triggerstatus" jdbcType="VARCHAR" />
+        <result column="crate_time" property="createtime" jdbcType="TIMESTAMP" />
+        <result column="update_time" property="updatetime" jdbcType="TIMESTAMP" />
+        <result column="desc_ript" property="descript" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <!-- 基础查询语句   -->
+    <sql id="Base_Query">
+        <![CDATA[
+        SELECT tiq.id, tiq.trigger_group, tiq.job_name, tiq.trigger_name, tiq.class_name,
+        tiq.enable_status, tiq.trigger_cron, tiq.trigger_status, tiq.crate_time, tiq.update_time,
+        tiq.desc_ript
+        FROM t_instmt_quartz tiq
+        ]]>
+    </sql>
+
+    <!-- 根据手机号找到WdBuyer对象 -->
+    <select id="findQuartzById" parameterType="java.lang.String" resultMap="BaseResultMap">
+        <include refid="Base_Query" />
+        <![CDATA[where tiq.id = #{id,jdbcType=VARCHAR}]]>
+    </select>
+
+
+
+
+</mapper>

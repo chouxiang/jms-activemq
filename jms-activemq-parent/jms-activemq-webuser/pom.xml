@@ -1,0 +1,88 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.qianmai</groupId>
+    <artifactId>jms-activemq-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <artifactId>jms-activemq-webuser</artifactId>
+  <packaging>war</packaging>
+  <name>jms-activemq-webuser</name>
+  <description>jms-activemq-webuser</description>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <dependencies>
+  	<!-- 注：webuser里面会用到工具类、实体类、dao层、service层 -->
+  	<dependency>
+		<groupId>com.qianmai</groupId>
+		<artifactId>jms-activemq-commonutil</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+	<dependency>
+		<groupId>com.qianmai</groupId>
+		<artifactId>jms-activemq-model</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+  	<dependency>
+		<groupId>com.qianmai</groupId>
+		<artifactId>jms-activemq-dao</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+	<dependency>
+		<groupId>com.qianmai</groupId>
+		<artifactId>jms-activemq-service</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>com.qianmai</groupId>
+		<artifactId>jms-activemq-activemq</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+	
+  </dependencies>
+  
+  
+  <!-- 利用jetty启动 -->
+  <!-- <build>
+		<finalName>SpringShiro</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.10</version>
+				<configuration>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<stopKey>foo</stopKey>
+					<stopPort>9999</stopPort>
+				</configuration>
+				<executions>
+					<execution>
+						<id>start-jetty</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<scanIntervalSeconds>0</scanIntervalSeconds>
+							<daemon>true</daemon>
+						</configuration>
+					</execution>
+					<execution>
+						<id>stop-jetty</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>stop</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build> -->
+  
+  
+</project>
